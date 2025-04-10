@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cb4l5xvat-python-gitops
+  description: This is GitOps manifest for cb4l5xvat-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=cb4l5xvat-python
+    backstage.io/kubernetes-id: cb4l5xvat-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cb4l5xvat-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cb4l5xvat-python
